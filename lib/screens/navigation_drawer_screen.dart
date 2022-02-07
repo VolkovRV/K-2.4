@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/utils/global_theme.dart';
 
 class NavigationDrawerScreen extends StatefulWidget {
   const NavigationDrawerScreen({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _NavigationDrawerScreenState extends State<NavigationDrawerScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        theme: globalTheme(),
       scaffoldMessengerKey: _messengerKey,
       home: Scaffold(
         appBar: AppBar(),

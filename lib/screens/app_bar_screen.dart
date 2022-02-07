@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled1/utils/global_theme.dart';
 
 class AppBarScreen extends StatefulWidget {
   const AppBarScreen({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class _AppBarScreenState extends State<AppBarScreen> {
         TextButton.styleFrom(primary: Theme.of(context).colorScheme.onPrimary);
 
     return MaterialApp(
+      theme: globalTheme(),
       home: Scaffold(
         appBar: AppBar(
           title: Text("Демо AppBar"),

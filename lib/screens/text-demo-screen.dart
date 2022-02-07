@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled1/utils/global_theme.dart';
 class TextDemoScreen extends StatelessWidget {
   const TextDemoScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: globalTheme(),
       home: Scaffold(
         body: Center(
           child: Column(
