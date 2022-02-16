@@ -70,7 +70,21 @@ class _NetWorkingScreenState extends State<NetWorkingScreen> {
           title: const Text('Fetch Data Example'),
         ),
         body: Center(
-          child: FutureBuilder<Post>(
+          child: Column(children: [
+            const SizedBox(height: 150,),
+            FutureBuilder<Post>(
+            future: futurePost,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data!.title);
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+                return const CircularProgressIndicator();
+            },
+          ),
+            const SizedBox(height: 150,),
+            FutureBuilder<Post>(
             future: futurePost,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
@@ -78,11 +92,10 @@ class _NetWorkingScreenState extends State<NetWorkingScreen> {
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
               }
-
-              // By default, show a loading spinner.
               return const CircularProgressIndicator();
             },
           ),
+          ],)
         ),
       ),
     );
